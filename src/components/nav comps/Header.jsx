@@ -33,7 +33,7 @@ const Header = () => {
                 </div>
             </div>
             <div>
-                <img className="w-6" src="/sruy.png" alt="Search" />
+                <img className="w-5" src="/sruy.png" alt="Search" />
             </div>
         </header>
     );
