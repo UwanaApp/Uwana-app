@@ -7,10 +7,20 @@ const Header = () => {
         setActive(item);
     };
 
+    const preventDownload = (e) => {
+        e.preventDefault();
+    };
+
     return (
         <header className="fixed top-0 flex flex-row justify-between items-center w-full bg-white border-b-2 border-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-4 py-2 shadow-lg z-50">
             <div>
-                <img className="w-10" src="/bitmap.png" alt="Logo" />
+                <img
+                    className="w-10"
+                    src="/bitmap.png"
+                    alt="Logo"
+                    onContextMenu={preventDownload} // Disable right-click
+                    draggable="false" // Prevent drag
+                />
             </div>
             <div className="flex space-x-6">
                 <div>
@@ -33,7 +43,13 @@ const Header = () => {
                 </div>
             </div>
             <div>
-                <img className="w-5" src="/sruy.png" alt="Search" />
+                <img
+                    className="w-5"
+                    src="/sruy.png"
+                    alt="Search"
+                    onContextMenu={preventDownload} // Disable right-click
+                    draggable="false" // Prevent drag
+                />
             </div>
         </header>
     );

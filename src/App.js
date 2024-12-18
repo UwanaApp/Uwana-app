@@ -1,14 +1,12 @@
-import Header from './components/nav comps/Header';
-import Footer from './components/nav comps/Footer';
-import './App.css';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AllRoutes from './routes/Allroutes';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Footer />
-
-    </div>
+    <BrowserRouter>
+      <AllRoutes />
+    </BrowserRouter>
   );
 }
 
