@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Post = ({ post }) => {
     const [emojiReactions, setEmojiReactions] = useState({
@@ -13,7 +13,10 @@ const Post = ({ post }) => {
         setEmojiReactions((prev) => {
             const newReactions = { ...prev };
             if (selectedEmoji) {
-                newReactions[selectedEmoji] = Math.max(newReactions[selectedEmoji] - 1, 0);
+                newReactions[selectedEmoji] = Math.max(
+                    newReactions[selectedEmoji] - 1,
+                    0
+                );
             }
             newReactions[emoji] += 1;
             return newReactions;
