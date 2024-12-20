@@ -14,7 +14,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="fixed bottom-0 flex flex-row justify-between items-center w-full bg-white border-t-2 border-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-4 py-2 shadow-lg z-50">
+        <footer className="fixed bottom-0 flex flex-row justify-between items-center w-full border-t-2 border-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-4 py-2 shadow-lg z-50"  style={{ backgroundColor: 'rgb(245, 245, 245)' }}>
             <div>
                 <img
                     className="w-5"
