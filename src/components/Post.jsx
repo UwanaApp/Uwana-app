@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Post = ({ post }) => {
     const [emojiReactions, setEmojiReactions] = useState({
-        love: 0,
-        twito: 0,
+        love: 51,
+        twito: 5,
         star: 0,
     });
     const [selectedEmoji, setSelectedEmoji] = useState(null);
@@ -13,10 +13,7 @@ const Post = ({ post }) => {
         setEmojiReactions((prev) => {
             const newReactions = { ...prev };
             if (selectedEmoji) {
-                newReactions[selectedEmoji] = Math.max(
-                    newReactions[selectedEmoji] - 1,
-                    0
-                );
+                newReactions[selectedEmoji] = Math.max(newReactions[selectedEmoji] - 1, 0);
             }
             newReactions[emoji] += 1;
             return newReactions;
@@ -30,11 +27,14 @@ const Post = ({ post }) => {
 
     return (
         <div className="border rounded-lg shadow-lg p-4 mb-6">
-            <div className="flex items-center mb-4">
-                <img className="w-12 h-12 rounded-full mr-4" src={post.user.profilePicture} alt="User Profile" />
+            <div className="flex items-center mb-4 relative">
+                <img className="w-12 h-12 rounded-full object-cover mr-4" src={post.user.profilePicture} alt="User Profile" />
                 <div className="flex flex-col">
-                    <h5 className="font-bold text-lg">{post.user.username}</h5>
-                    <p className="text-sm text-gray-500">{post.time}</p>
+                    <h5 className="font-semibold text-[15px] text-black">@{post.user.username}</h5>
+                    <p className="text-[15px] text-black">{post.time}</p>
+                </div>
+                <div className="absolute right-0 top-0 flex items-center justify-center w-6 h-6">
+                    <span className="text-black">•••</span>
                 </div>
             </div>
             <div className="mb-4">
@@ -54,10 +54,10 @@ const Post = ({ post }) => {
             </div>
 
             <div className="mb-4">
-                <p className="text-gray-700">
+                <p className="text-[15px] text-black">
                     {expanded ? post.content : `${post.content.substring(0, 100)}...`}
                     <button
-                        className="text-blue-500 underline ml-2"
+                        className="text-black ml-2"
                         onClick={handleReadMore}
                     >
                         {expanded ? 'Show Less' : 'Read More'}
@@ -65,14 +65,14 @@ const Post = ({ post }) => {
                 </p>
             </div>
             <div className="flex items-center justify-between">
-                <div className="flex space-x-6">
+                <div className="flex space-x-8">
                     {/* Love Emoji */}
                     <div
                         className={`flex items-center space-x-1 cursor-pointer transform transition-transform duration-200 ${selectedEmoji === 'love' ? 'scale-125' : ''}`}
                         onClick={() => handleEmojiClick('love')}
                     >
                         <img
-                            className="w-6 h-6"
+                            className="w-4 h-4"
                             src={
                                 selectedEmoji === 'love'
                                     ? `${process.env.PUBLIC_URL}/filled heart.png`
@@ -89,7 +89,7 @@ const Post = ({ post }) => {
                         onClick={() => handleEmojiClick('twito')}
                     >
                         <img
-                            className="w-6 h-6"
+                            className="w-4 h-4"
                             src={`${process.env.PUBLIC_URL}/twito.png`}
                             alt="Twito Icon"
                         />
@@ -102,14 +102,14 @@ const Post = ({ post }) => {
                         onClick={() => handleEmojiClick('star')}
                     >
                         <img
-                            className="w-6 h-6"
+                            className="w-4 h-4"
                             src={`${process.env.PUBLIC_URL}/wishlist.png`}
                             alt="Star Icon"
                         />
                         <span>{emojiReactions.star}</span>
                     </div>
                 </div>
-                <div className="text-blue-500 cursor-pointer flex items-center">
+                <div className="text-black cursor-pointer flex items-center text-[10px]">
                     <p>View {post.replies} replies</p>
                     <img className="ml-2 w-4 h-4" src="/right.png" alt="Right Arrow" />
                 </div>
