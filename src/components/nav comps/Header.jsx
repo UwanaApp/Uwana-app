@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <header className="fixed top-0 flex flex-row justify-between items-center w-full bg-white border-b-2 border-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-4 py-2  z-50"
-        style={{ backgroundColor: 'rgb(245, 245, 245)' }}>
+            style={{ backgroundColor: 'rgb(245, 245, 245)' }}>
             <div>
                 <img
                     className="w-10"
