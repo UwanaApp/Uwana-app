@@ -14,10 +14,13 @@ const Footer = () => {
     };
 
     return (
-        <footer className="fixed bottom-0 flex flex-row justify-between items-center w-full border-t-2 border-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-4 py-2 shadow-lg z-50"  style={{ backgroundColor: 'rgb(245, 245, 245)' }}>
+        <footer
+            className="fixed bottom-0 flex flex-row justify-between items-center w-full border-t-2 border-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-5 py-2 shadow-lg z-50"
+            style={{ backgroundColor: 'rgb(245, 245, 245)' }}
+        >
             <div>
                 <img
-                    className="w-5"
+                    className="w-7"
                     src="/nest1.png"
                     alt="Navigation"
                     onContextMenu={preventDownload} // Disable right-click
@@ -26,7 +29,7 @@ const Footer = () => {
             </div>
             <div>
                 <img
-                    className="w-5"
+                    className="w-7"
                     src="/bell.png"
                     alt="Notification"
                     onContextMenu={preventDownload} // Disable right-click
@@ -50,7 +53,7 @@ const Footer = () => {
             </div>
             <div>
                 <img
-                    className="w-5"
+                    className="w-7"
                     src="/comment(1).png"
                     alt="Comment"
                     onContextMenu={preventDownload} // Disable right-click
@@ -59,7 +62,7 @@ const Footer = () => {
             </div>
             <div>
                 <img
-                    className="w-5"
+                    className="w-7"
                     src="/ouser.png"
                     alt="User"
                     onContextMenu={preventDownload} // Disable right-click
