@@ -9,9 +9,9 @@ export const AllRoutes = () => {
     return (
         <>
             <Header />
-            <Routes>
+            {/* <Routes>
                 <Route path="/" element={<Home />} />
-            </Routes>
+            </Routes> */}
             <Footer />
         </>
     );
